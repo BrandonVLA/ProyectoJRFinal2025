@@ -50,3 +50,41 @@ function evaluarNota() {
     ).innerText = `El resultado es Reprobado`;
   }
 }
+//Tarea Ejercicio #1
+function calcularDescuento() {
+  let monto = document.getElementById("monto").value;
+  console.log(monto);
+  let montoConvertido = parseFloat(monto);
+  console.log(montoConvertido);
+
+  if (montoConvertido >= 100) {
+    let montoDescuento = montoConvertido * 0.09;
+    let montoTotal = montoConvertido - montoDescuento;
+
+    console.log(montoTotal);
+
+    document.getElementById("mensajeDescuento").innerText = `Aplicas para un descuento de $${montoDescuento} por que tu compra es mayor o igual a $100! El total a pagar es de $${montoTotal}.`;
+  } else {
+    document.getElementById("mensajeDescuento").innerText = `No aplicas para el descuento por que tu compra es de $${montoConvertido} y necesita ser de $100 o mas!`;
+  }
+}
+//----------------------------------------
+
+//Tarea Ejercicio #2
+function verificarMayorMenor() {
+  let edad = document.getElementById("edadSimple").value;
+  console.log(edad);
+  let edadConvertida = parseInt(edad);
+  console.log(edadConvertida);
+
+  if (edadConvertida >= 18) {
+    document.getElementById(
+      "mensajeEdadSimple"
+    ).innerText = `Eres mayor de edad por que tienes ${edadConvertida} años.`;
+  } else {
+    document.getElementById(
+      "mensajeEdadSimple"
+    ).innerText = `Eres menor de edad por que tienes ${edadConvertida} años.`;
+  }
+}
+//----------------------------------------
