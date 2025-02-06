@@ -88,29 +88,42 @@ function primeraPersonaActiva() {
 //Input Id value
 //Cualquier etiqueta mostrar el resultado inner
 //------------------------Caso #3-----------------------------------
+function primeraMayorDeEdad() {
+  let resultado = document.getElementById("resultadoMayor");
+  let busqueda = personas.find((x) => x.edad >= 18);
 
-
-
-
-
-
+  if (busqueda) {
+    resultado.innerHTML = `La primera persona mayor de edad es: ${busqueda.nombre}`;
+  } else {
+    resultado.innerHTML = `No se encontro nadie mayor de edad`;
+  }
+}
 
 //Crear la funcion de onclick
 //Input Id value
 //Cualquier etiqueta mostrar el resultado inner
 //------------------------Caso #4-----------------------------------
+function mostrarTodasLasPersonas() {
+  let resultado = document.getElementById("listaPersonas");
 
-
-
+  personas.forEach((element) => {
+    resultado.innerHTML += `<li> - Nombre: ${element.nombre}, - Edad: ${element.edad}, - Activo: ${element.activo}. </li>`;
+  });
+}
 
 //Crear la funcion de onclick
 //Input Id value
 //Cualquier etiqueta mostrar el resultado inner
 //------------------------Caso #5-----------------------------------
+function mayoresDeEdad() {
+  let valor1 = document.getElementById("listaMayores");
 
-
-
-
+  personas.forEach((element) => {
+    if (element.edad >= 18) {
+      valor1.innerHTML += `<li>- Nombre: ${element.nombre}. - Edad: ${element.edad}</li>`;
+    }
+  });
+}
 
 //Crear la funcion de onclick
 //Input Id value
@@ -118,14 +131,47 @@ function primeraPersonaActiva() {
 //------------------------Caso #6-----------------------------------
 
 function personasActivas() {
-    let resultado = document.getElementById('listaActivos');
+  let resultado = document.getElementById("listaActivos");
 
-    personas.forEach(element => {
-        
-        if (element.activo == true) {
-            resultado.innerHTML += `<li>nombre: ${element.nombre}</li>`
-        }
-    });
+  personas.forEach((element) => {
+    if (element.activo == true) {
+      resultado.innerHTML += `<li>nombre: ${element.nombre}</li>`;
+    }
+  });
 }
 
-//Tarea-Entregable 2 Ejercicios 3,4,5
+//Ejercicios Adicionales para Logica
+
+//Ejercicio Adicional #1
+
+// function personasActivas() {
+//   let valor1 = document.getElementById('listaActivos');
+
+//   personas.forEach(element => {
+//     if (element.activo === true) {
+//       valor1.innerHTML += `<li> Edad: ${element.nombre} , Estado: ${element.activo}.</li>`;
+//     }
+//   });
+// }
+
+//Ejercicio Adicional #2
+
+// function personasActivas() {
+//   let valor2 = document.getElementById("listaActivos");
+//   personas.forEach((element) => {
+//     if (element.edad <= 18) {
+//       valor2.innerHTML += `<li> Edad: ${element.edad}, Estado: ${element.activo}.</li>`;
+//     }
+//   });
+// }
+
+//Ejercicio Adicional #3
+// function personasActivas() {
+//   valor3 = document.getElementById('listaActivos');
+
+//   personas.forEach(element => {
+//     if (element.activo === false) {
+//       valor3.innerHTML += `<li> Nombre: ${element.nombre}. Esta Activo? :${element.activo}.</li>`
+//     }
+//   });
+// }
