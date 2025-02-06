@@ -50,6 +50,10 @@ function evaluarNota() {
     ).innerText = `El resultado es Reprobado`;
   }
 }
+
+
+
+
 //Tarea Ejercicio #1
 function calcularDescuento() {
   let monto = document.getElementById("monto").value;
@@ -70,6 +74,10 @@ function calcularDescuento() {
 }
 //----------------------------------------
 
+
+
+
+
 //Tarea Ejercicio #2
 function verificarMayorMenor() {
   let edad = document.getElementById("edadSimple").value;
@@ -78,13 +86,9 @@ function verificarMayorMenor() {
   console.log(edadConvertida);
 
   if (edadConvertida >= 18) {
-    document.getElementById(
-      "mensajeEdadSimple"
-    ).innerText = `Eres mayor de edad por que tienes ${edadConvertida} años.`;
+    document.getElementById("mensajeEdadSimple").innerText = `Eres mayor de edad por que tienes ${edadConvertida} años.`;
   } else {
-    document.getElementById(
-      "mensajeEdadSimple"
-    ).innerText = `Eres menor de edad por que tienes ${edadConvertida} años.`;
+    document.getElementById("mensajeEdadSimple").innerText = `Eres menor de edad por que tienes ${edadConvertida} años.`;
   }
 }
 //----------------------------------------
