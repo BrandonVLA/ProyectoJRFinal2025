@@ -1,49 +1,86 @@
-console.log('Funcionando Archivo: API_Listado_Clientes');
+console.log("Funcionando Archivo: API_Listado_Clientes");
 
-const Api_Usuarios = "https://jsonplaceholder.typicode.com/users"
+const Api_Usuarios = "https://jsonplaceholder.typicode.com/users";
 
+const Api2 = "https://rickandmortyapi.com/api/character";
 
 // Datos locales simulando la API
-let Datos_Locales = [];
 
 let DatosFiltrados = [];
-let contenedor = document.getElementById('tbody');
+let DatosFiltrados2 = [];
+let contenedor = document.getElementById("tbody");
 
-
-//Se guardan los datos de Datos_Locales que s donde se simula la API al arreglo de DatosFiltrados para que si cambia el numbre en un futuro no se tengan que cambiar muchos numbres de arreglos y solo el que se le asigna a la variable
-DatosFiltrados = Datos_Locales;
-
-
-//aela
-//manera profesional
-//Importante el DOMContentLoaded
-document.addEventListener('DOMContentLoaded', () => {
+//aela Visualizar al ejecutar la pagina DOM
+document.addEventListener("DOMContentLoaded", () => {
   consultarDatos();
-  ConsultarApiClientes();
+  consultarDatos2();
 });
 
+// Consultar Datos del API mediante Fetch(AJAX) AXIOS
 function consultarDatos() {
   //fetchget
-  fetch(Api_Usuarios)
-
-    .then(response => response.json())
-    .then(result => {
+  fetch(Api_Usuarios) //1- se le indica la url de la api
+    .then((response) => response.json()) // 2 -Conversion de datos , JSON
+    .then((result) => {
+      //3- Resultado  result
+      // custom error
       console.log(result);
+      DatosFiltrados = result;
+      Mostrar_CampoTabla();
     })
-    .catch(error => {
+    .catch((error) => {
+      ///4- Catch
       // common error
+      alert("Error ", error);
       return null;
     });
+}
+
+function Mostrar_CampoTabla() {
+  let html = "";
+
+  DatosFiltrados.forEach((element) => {
+    console.log(element);
+
+    html += `
+    
+    <tr>
+      <td>${element.id}</td>
+      <td>${element.name}</td>
+      <td>${element.email}</td>
+    </tr>
+    `;
+  });
+  contenedor.innerHTML = html;
 }
 
 function ConsultarApiClientes() {
   fetch(Api_Usuarios)
-    .then(response => response.json())
-    .then(result => {
+    .then((response) => response.json())
+    .then((result) => {
       console.log(result);
     })
-    .catch(error => {
+    .catch((error) => {
       // common error
+      alert("Error:", error);
       return null;
     });
 }
+//Entregable 4
+function consultarDatos2() {
+  //fetchget
+  fetch(Api2) //1- se le indica la url de la api
+    .then((response) => response.json()) // 2 -Conversion de datos , JSON
+    .then((result) => {
+      //3- Resultado  result
+      // custom error
+      console.log(result.results);
+    })
+    .catch((error) => {
+      ///4- Catch
+      // common error
+      alert("Error ", error);
+      return null;
+    });
+}
+

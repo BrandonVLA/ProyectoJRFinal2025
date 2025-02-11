@@ -10,7 +10,7 @@ let Datos_Locales = [
 
 let DatosFiltrados = [];
 let contenedor = document.getElementById('tbody');
-
+//Se guardan los datos de Datos_Locales que s donde se simula la API al arreglo de DatosFiltrados para que si cambia el numbre en un futuro no se tengan que cambiar muchos numbres de arreglos y solo el que se le asigna a la variable
 DatosFiltrados = Datos_Locales;
 
 
@@ -34,10 +34,9 @@ function Mostrar_CampoTabla() {
         <td>${element.email}</td>
         <td>${element.id}</td>
       </tr>
-      ` 
-
-      contenedor.innerHTML = html;
+      `    
     });
+    contenedor.innerHTML = html;
 }
 
 
