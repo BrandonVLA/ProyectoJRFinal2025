@@ -23,15 +23,15 @@
     <!-- Estilos Personalizados -->
     <link rel="stylesheet" href="CSS/styles.css">
     <link rel="shortcut icon" href="Assets/favicon.ico" type="image/x-icon">
-    
+
 </head>
 
 <body>
 
     <!-- Inicio: Navbar  100% -->
     <nav class="navbar navbar-expand-sm navbar-light bg-light" id="IdNav"> </nav>
-    <!-- Fin: Navbar  -->   
-    
+    <!-- Fin: Navbar  -->
+
 
 
     <!-- Inicio: Container 90% -->
@@ -45,11 +45,12 @@
 
         <!-- Inicio: Main  -->
         <main class="mt-5">
+
             <div class="container  ">
                 <div class="col-md-12">
                     <h2 class="text-center mt-4">Tabla de Datos</h2>
                     <div class="table-responsive">
-                        <table class="table table-bordered table-striped text-center" >
+                        <table class="table table-bordered table-striped text-center " id="ttabla">
                             <thead class="thead-dark">
                                 <tr>
                                     <th>Nombre</th>
@@ -73,27 +74,78 @@
                     </div>
                 </div>
             </div>
-            
+
+            <div class="container  ">
+                <div class="col-md-12">
+                    <h2 class="text-center mt-4">Tabla API RICK </h2>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped text-center " id="ttabla">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nombre</th>
+                                    <th>Status</th>
+                                    <th>Species</th>
+                                    <th>Imagen</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody2">
+                                <tr>
+                                    <td>Juan Pérez</td>
+                                    <td></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container  ">
+                <div class="col-md-12">
+                    <h2 class="text-center mt-4">Tabla API COMMENTS </h2>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped text-center " id="ttabla">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nombre</th>
+                                    <th>Email</th>
+                                    <th>Cuerpo</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody3">
+                                <tr>
+                                    <td>Juan Pérez</td>
+                                    <td></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
         </main>
         <!-- Fin: Main  -->
     </div>
     <!-- Fin: Container  -->
 
     <!-- Inicio: Footer  100% -->
-    <footer id="IdFooter" class="text-center mt-5">  </footer>
+    <footer id="IdFooter" class="text-center mt-5"> </footer>
     <!-- Fin: Footer  -->
 
 
 
 
 
-   
+
     <!-- Scripts General  -->
     <script type="module" src="JS/General/Nav.js"></script>
     <script type="module" src="JS/General/Footer.js"></script>
     <script type="module" src="JS/General/Header.js"></script>
-   
-   <!-- Scripts de la Pagina   -->
+
+    <!-- Scripts de la Pagina   -->
     <script src="JS/PagesJS/API_Listado_Clientes.js"></script>
 
 
