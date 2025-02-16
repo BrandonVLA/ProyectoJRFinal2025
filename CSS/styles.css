@@ -1,40 +1,111 @@
-
-:root{
-  --fondogradiante:linear-gradient(to bottom, #dd2476, #ff512f);  
-  --colorglobal:#dd2476;
+:root {
+  --fondogradiante: linear-gradient(to bottom, #dd2476, #ff512f);
+  --colorglobal: #dd2476;
   --TextClaro: white;
+  --fondoGradianteAlternativo: background: #5A3F37;  /* fallback for old browsers */background: -webkit-linear-gradient(to right, #2C7744, #5A3F37);  /* Chrome 10-25, Safari 5.1-6 */background: linear-gradient(to right, #2C7744, #5A3F37); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  --fondogradienteclaro: background: #833ab4; /* fallback for old browsers */background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  ;
+}
+
+body {
+  font-family: "Titillium Web", sans-serif;
+
+  background-image: url(/Assets/call-of-duty-black-ops-gunman-sbtydu79stjyj94f.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  image-resolution: 1920 x 1080;
+
+  /*background: #0B486B;  /* fallback for old browsers */
+  /*background: -webkit-linear-gradient(to right, #F56217, #0B486B);  /* Chrome 10-25, Safari 5.1-6 */
+  /*background: linear-gradient(to right, #F56217, #0B486B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  /*background: #2980b9;  /* fallback for old browsers */
+  /*background: -webkit-linear-gradient(to right, #2c3e50, #2980b9);  /* Chrome 10-25, Safari 5.1-6 */
+  /*background: linear-gradient(to right, #2c3e50, #2980b9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  /*background: #8360c3;  /* fallback for old browsers */
+  /*background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);  /* Chrome 10-25, Safari 5.1-6 */
+  /*background: linear-gradient(to right, #2ebf91, #8360c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
-body{
-    font-family: "Titillium Web", sans-serif;
+#Testimonios {
+  color:#000
 }
 
-main{
-
-    height: auto !important;
-    height: 100%;
-    min-height: 80vh;
-}
-header{
-    background: var(--colorglobal);
-    color: var(--TextClaro);
-    background: var(--fondogradiante);
-}
-footer{
-
-    background: rgba(0, 0, 0, 0.815);
+.container {
+  padding-top: 1px;
+  margin-top: 20px;
+  border-radius: 10px;
+  background-color:white;
 }
 
-.iconos i{
-    color:  var(--colorglobal);
-   
+.fondo-informacion {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+
+.container p {
+  border-color: #000;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
+  border-radius: 3px;
+}
+
+.nav-link {
+  background-color: lightblue;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.nav-link:hover {
+  background-color:  #3583e1 ;
+  border-radius: 5px;
+  margin: 2px;
+}
+main {
+  height: auto !important;
+  height: 100%;
+  min-height: 80vh;
+}
+
+header div {
+  background: var(--colorglobal);
+  color: var(--TextClaro);
+  background: var(--fondogradiante);
+  padding-top: 10px;
+  border-radius: 10px;
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.815);
+}
+
+.iconos i {
+  color: var(--colorglobal);
 }
 
 .texto-cortado {
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* 🔹 Número de líneas antes de cortar */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* 🔹 Número de líneas antes de cortar */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
+footer .footer-fixed {
+  background: rgba(0, 0, 0, 0.815);
+
+}
+
+
+.imagen_tablas {
+  border-radius: 50px;
+}
+

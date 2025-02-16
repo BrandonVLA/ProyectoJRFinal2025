@@ -13,7 +13,6 @@ function enviarDatos(dato1) {
 
 function realizarSuma() {
   console.log("Funcionando realizar suma");
-  debugger;
   let numero1 = document.getElementById("numero1").value; // Snippet gi para crear estructura
   let numero2 = document.getElementById("numero2").value;
   console.log(numero1);

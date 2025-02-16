@@ -1,94 +1,87 @@
-console.log('Funcionando Archivo: API_Listado_Clientes');
+console.log("Funcionando Archivo: API_Listado_Clientes");
 
-const Api_Usuarios = "https://jsonplaceholder.typicode.com/users"
+const Api_Usuarios = "https://jsonplaceholder.typicode.com/users";
 
-const Api2 = "https://rickandmortyapi.com/api/character"
+const Api2 = "https://rickandmortyapi.com/api/character";
 
-const Api3 = "https://jsonplaceholder.typicode.com/comments"
+const Api3 = "https://jsonplaceholder.typicode.com/comments";
 
 // Datos locales simulando la API
 
-
-
-let DatosFiltrados = []
-let DatosFiltrados2 = []
-let DatosFiltrados3 = []
-let contenedor = document.getElementById('tbody');
-let contenedor2 = document.getElementById('tbody2'); //Crean contenido 
-let contenedor3 = document.getElementById('tbody3');
+let DatosFiltrados = [];
+let DatosFiltrados2 = [];
+let DatosFiltrados3 = [];
+let contenedor = document.getElementById("tbody");
+let contenedor2 = document.getElementById("tbody2"); //Crean contenido
+let contenedor3 = document.getElementById("tbody3");
 
 //aela Visualizar al ejecutar la pagina DOM
-document.addEventListener('DOMContentLoaded', () => {
-    consultarDatos() //Cuando trabajamos con APIS se llama a la funcion de consultar 
-    consultarDatos2()
-    consultarDatos3()   
+document.addEventListener("DOMContentLoaded", () => {
+  consultarDatos(); //Cuando trabajamos con APIS se llama a la funcion de consultar
+  consultarDatos2();
+  consultarDatos3();
 });
 
 // Consultar Datos del API mediante Fetch(AJAX) AXIOS
 function consultarDatos() {
-
-    //fetchget
-    fetch(Api_Usuarios) //1- se le indica la url de la api 
-        
-        .then(response => response.json()) // 2 -Conversion de datos , JSON 
-        .then(result => {           //3- Resultado  result
-            // custom error
-            console.log(result)
-            DatosFiltrados = result
-            Mostrar_CampoTabla()
-        })
-        .catch(error => {      ///4- Catch
-            // common error
-            alert("Error ",error)
-            return null;
-        });
-    
+  //fetchget
+  fetch(Api_Usuarios) //1- se le indica la url de la api
+    .then((response) => response.json()) // 2 -Conversion de datos , JSON
+    .then((result) => {
+      //3- Resultado  result
+      // custom error
+      console.log(result);
+      DatosFiltrados = result;
+      Mostrar_CampoTabla();
+    })
+    .catch((error) => {
+      ///4- Catch
+      // common error
+      alert("Error ", error);
+      return null;
+    });
 }
 
 function consultarDatos2() {
-
-    //fetchget
-    fetch(Api2) //1- se le indica la url de la api 
-        
-        .then(response => response.json()) // 2 -Conversion de datos , JSON 
-        .then(result => {           //3- Resultado  result
-            // custom error
-            console.log(result.results)
-            DatosFiltrados2 = result.results
-            Mostrar_CampoTabla2()
-        })
-        .catch(error => {      ///4- Catch
-            // common error
-            alert("Error ",error)
-            return null;
-        });
-    
+  //fetchget
+  fetch(Api2) //1- se le indica la url de la api
+    .then((response) => response.json()) // 2 -Conversion de datos , JSON
+    .then((result) => {
+      //3- Resultado  result
+      // custom error
+      console.log(result.results);
+      DatosFiltrados2 = result.results;
+      Mostrar_CampoTabla2();
+    })
+    .catch((error) => {
+      ///4- Catch
+      // common error
+      alert("Error ", error);
+      return null;
+    });
 }
 
 function consultarDatos3() {
   fetch(Api3)
-    .then(response => response.json())
-    .then(result => {
-      console.log(result)
-      DatosFiltrados3 = result
-      Mostrar_CampoTabla3()
+    .then((response) => response.json())
+    .then((result) => {
+      console.log(result);
+      DatosFiltrados3 = result;
+      Mostrar_CampoTabla3();
     })
-    .catch(error => {
+    .catch((error) => {
       // common error
       return null;
     });
 }
 
-
 function Mostrar_CampoTabla() {
-    
-    let html = ""
-    
-    DatosFiltrados.forEach(element => {
-        
-        console.log(element)
+  let html = "";
 
-        html += `
+  DatosFiltrados.forEach((element) => {
+    console.log(element);
+
+    html += `
         
         <tr>
             <td> ${element.id} </td>
@@ -99,25 +92,19 @@ function Mostrar_CampoTabla() {
         </tr>
         
         
-        `
+        `;
+  });
 
-    });
-
-    contenedor.innerHTML = html
-
+  contenedor.innerHTML = html;
 }
 
-
-
 function Mostrar_CampoTabla2() {
-    
-    let html = ""
-    
-    DatosFiltrados2.forEach(element => {
-        
-        console.log(element)
+  let html = "";
 
-        html += `
+  DatosFiltrados2.forEach((element) => {
+    console.log(element);
+
+    html += `
         
         <tr>
             <td> ${element.id} </td>
@@ -129,19 +116,17 @@ function Mostrar_CampoTabla2() {
         </tr>
         
         
-        `
+        `;
+  });
 
-    });
-
-    contenedor2.innerHTML = html
-
+  contenedor2.innerHTML = html;
 }
 
 function Mostrar_CampoTabla3() {
-  let html = ""
-  
-  DatosFiltrados3.forEach(element => {
-    console.log(element)
+  let html = "";
+
+  DatosFiltrados3.forEach((element) => {
+    console.log(element);
 
     html += `
     <tr>
@@ -150,8 +135,8 @@ function Mostrar_CampoTabla3() {
       <td> ${element.email} </td>
       <td> ${element.body} </td>        
     </tr>
-    `
+    `;
   });
 
-  contenedor3.innerHTML = html
+  contenedor3.innerHTML = html;
 }
